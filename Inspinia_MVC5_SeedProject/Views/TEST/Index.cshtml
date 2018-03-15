@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input class="touchspin1 form-control" type="text" value="" name="demo1" style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></div>
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/plugins/touchSpinStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/touchSpin")
+
+    <script>
+        $(".touchspin1").TouchSpin({
+            //buttondown_class: 'btn btn-white',
+            //buttonup_class: 'btn btn-white'
+        });
+
+    </script>
+
+    }

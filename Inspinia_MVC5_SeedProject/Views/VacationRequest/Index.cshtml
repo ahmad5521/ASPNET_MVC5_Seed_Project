@@ -1,0 +1,254 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="container">
+    <div class="ibox" id="ibox1">
+        <div class="ibox-title">
+            <h2>طلب اجازة</h2>
+        </div>
+        <div class="ibox-content">
+            <div class="sk-spinner sk-spinner-double-bounce">
+                <div class="sk-double-bounce1"></div>
+                <div class="sk-double-bounce2"></div>
+            </div>
+            <form class="form-horizontal m-t-md" id="RequestVecation" action="#">  
+                <div id="FirstDiv">
+                    <div class="float-e-margins">
+                        @*نوع الاجازة*@
+                        <div align="center">
+                            <div>
+                                <h3>نوع الاجازة</h3>
+                            </div>
+                            <br />
+                            <div class="i-checks">
+                                <label class="a">
+                                    <div class="iradio_square-green" style="position: relative;">
+                                        <input type="radio" value="option1" name="a" style="position: absolute; opacity: 0;">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                        </ins>
+                                    </div>
+                                    <i></i> أجازة رسمية
+                                </label>
+                                <label class="a">
+                                    <div class="iradio_square-green" style="position: relative;">
+                                        <input type="radio" value="option1" name="a" style="position: absolute; opacity: 0;">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                        </ins>
+                                    </div> <i></i> أجازة أضطرارية
+                                </label>
+                                <label class="a">
+                                    <div class="iradio_square-green" style="position: relative;">
+                                        <input type="radio" value="option1" name="a" style="position: absolute; opacity: 0;">
+                                        <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+                                        </ins>
+                                    </div> <i></i> إجازة أخرى
+                                </label>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        @*معلومات الموظف*@
+                        <div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>الاسم</th>
+                                        <th>الرقم</th>
+                                        <th>الرقم الخاص</th>
+                                        <th>القسم</th>
+                                        <th>المهنة</th>
+                                        <th>الجنسية</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td>فيصل ابراهيم الشامان</td>
+                                    <td>12345678</td>
+                                    <td>5545</td>
+                                    <td>الحاسب الالي</td>
+                                    <td>مساعد مدير القسم</td>
+                                    <td>سعودي</td>
+                                </tr>
+                            </table>
+                        </div>
+                        @*بداية الاجازة*@
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class=" control-label">
+                                    امل الترخيص لي بأجازة أعتبارا من :
+                                </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="03/05/1439">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class=" control-label">
+                                    هذا التاريخ يوافق :
+                                </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" readonly value="03/05/1439">
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        @*جدول الارصدة*@
+                        <div class="" align="center">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>نوع الاجازة</th>
+                                        <th>الرصيد المسموح استخدامه من تاريخ بداية الاجازة</th>
+                                        <th>عدد ايام الاجازة المطلوبة</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td>الايام السنوية</td>
+                                    <td align="center"><label id="annualH"/></td>
+                                    <td align="center">
+                                        <div class="input-group bootstrap-touchspin">
+                                            <input class="touchspin1 " type="text" value="0" id="annualw" style="text-align:center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>الايام المقطوعة	</td>
+                                    <td align="center"><label id="privH" /></td>
+                                    <td align="center">
+                                        <div class="input-group bootstrap-touchspin">
+                                            <input class="touchspin1 form-control" type="text" value="0" name="demo1" style="display: block; text-align:center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ايام بدل اعياد	</td>
+                                    <td align="center"><label id="holydaysH" /></td>
+                                    <td align="center">
+                                        <div class="input-group bootstrap-touchspin">
+                                            <input class="touchspin1 form-control" type="text" value="0" name="demo1" style="display: block; text-align:center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ايام بدل اضافي</td>
+                                    <td align="center"><label id="overtimeH" /></td>
+                                    <td align="center">
+                                        <div class="input-group bootstrap-touchspin">
+                                            <input class="touchspin1 form-control" type="text" value="0" name="demo1" style="display: block; text-align:center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>الايام الاضطراريه</td>
+                                    <td align="center"><label id="urgentH" /></td>
+                                    <td align="center">
+                                        <div class="input-group bootstrap-touchspin">
+                                            <input class="touchspin1 form-control" type="text" value="0" name="demo1" style="display: block; text-align:center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>أخرى</td>
+                                    <td align="center"><label id="mngH" /></td>
+                                    <td align="center">
+                                        <div class="input-group bootstrap-touchspin">
+                                            <input class="touchspin1 form-control" type="text" value="0" name="demo1" style="display: block; text-align:center;">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                        </div>
+                        @*نهاية الاجازة والمباشرة*@
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class=" control-label">
+                                    نهاية الاجازة :
+                                </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" readonly value="03/05/1439">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class=" control-label">
+                                    المباشرة :
+                                </label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" readonly value="03/05/1439">
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        @*تعهد*@
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class=" control-label">تعهد :</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div style="border: 1px solid #e5e5e5; overflow: auto; padding: 10px;">
+                                    <p>بأن لا أغادر مقر عملي الا بعد استلام قرار اجازتي و ان لا اطلب تمديد اجازتي الا بعد موافقة رؤسائي .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <div class="col-xs-6 col-xs-offset-3">
+                                <div class="i-checks">
+                                    <input type="checkbox" style="position: absolute; opacity: 0;">
+                                    <label for="competitionFragmented">أتعهد</label>
+                                </div>
+                                <i class="form-control-feedback" data-fv-icon-for="agree" style="display: none;"></i>
+                                <small class="help-block" data-fv-validator="notEmpty" data-fv-for="agree" data-fv-result="NOT_VALIDATED" style="display: none;">You must agree with the terms and conditions</small>
+                            </div>
+                        </div>
+                        <br />
+                        @*الملاحظات*@
+                        <div class="form-group">
+                            <div class="col-lg-3">
+                                <label class="control-label">ادخال الملاحظات :</label>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="input-group col-lg-12">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        @*ارسال / الغاء*@
+                        <div align="center">
+                            <button class="btn btn-primary" style="width:150px;" type="submit">ارسال</button>
+                            <button class="btn btn-white" style="width:150px;" type="submit">الغاء</button>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    @Styles.Render("~/Content/plugins/iCheck/iCheckStyles")
+    @Styles.Render("~/plugins/touchSpinStyles")
+}
+
+@section Scripts {
+    @Scripts.Render("~/plugins/iCheck")
+    @Scripts.Render("~/plugins/touchSpin")
+
+
+    <script src="~/Scripts/VacationRequest.js"></script>
+
+}
